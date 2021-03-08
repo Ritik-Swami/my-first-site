@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+html,body{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, rgb(199, 199, 199), rgb(230, 230, 230));
+}
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Section */
+main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+    "header"
+    "main"
+    "about"
+    "gallery"
+    "contact"
+    "footer";
+}
+main, pro-about, pro-contact, pro-gallery, footer, .container-1, .container-2, .container-3, .container-4, .container-5, .header-cont-1, .header-cont-2 {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Header Section */
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "nav nav"
+    "header-cont1 header-cont2";
+}
+nav {
+    height: 70px;
+    width: 100%;
+    grid-area: nav;
+    background-image: linear-gradient(to top right, rgb(43, 43, 43), rgb(255, 0, 0));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    scroll-behavior: smooth;
+    transition: 0.5s linear;
+}
+nav-logo {
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 50px;
+    cursor: pointer;
+}
+nav-items ul {
+    display: inline-flex;
+    color: white;
+}
+nav-items li {
+    padding: 0 20px;
+    cursor: pointer;
+}
+nav-items.nav-icon {
+    display: none;
+}
+.header-cont-1 {
+    grid-area: header-cont1;
+    height: calc(100vh - 50px);
+    width: auto;
+}
+.header-cont-2 {
+    grid-area: header-cont2;
+    height: 100%;
+    width: auto;
+}
+
+/* Main Section */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+}
+main .container-1 {
+    border-radius: 10px;
+    height: 200px;
+    width: auto;
+    margin-right: 10px;
+    background-image: linear-gradient(to top left, red, blue);
+    color: white;
+}
+main .container-2 {
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* About Section */
+pro-about {
+    grid-area: about;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 50px;
+}
+pro-about .person {
+    height: 300px;
+}
+
+/* Gallery Section */
+pro-gallery {
+    grid-area: gallery;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(5, 1fr);
+}
+pro-gallery .container-1 {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+pro-gallery .container-2 {
+    grid-column: 2/3;
+    grid-row: 1/6;
+    height: 500px;
+}
+pro-gallery .container-3 {
+    grid-column: 3/4;
+    grid-row: 1/4;
+}
+pro-gallery .container-4 {
+    grid-column: 1/2;
+    grid-row: 3/6;
+}
+pro-gallery .container-5 {
+    grid-column: 3/4;
+    grid-row: 4/6;
+}
+pro-gallery .image {
+    border-radius: 10px;
+    background-image: linear-gradient(to top left, red, blue);
+    color: white;
+}
+
+/* Contact Section */
+pro-contact {
+    grid-area: contact;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+pro-contact .container-1 {
+    height: 400px;
+}
+pro-contact .container-2 {
+    height: 400px;
+}
+
+/* Footer Section */
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+#call-now {
+    display: none;
+}
+
+
+
+@media only screen and (max-width:800px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "nav"
+        "header-cont1"
+        "header-cont2";
+    }
+    .header-cont-1 {
+        grid-area: header-cont1;
+        height: calc(50vh - 50px);
+        width: auto;
+    }
+    .header-cont-2 {
+        grid-area: header-cont2;
+        height: 50vh;
+        width: auto;
+    }
+    nav-items.nav-icon {
+        display: block;
+        margin-right: 50px;
+        font-size:x-large;
+    }
+    nav-items.nav-exit-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 30px 40px;
+        font-size: 30px;
+        z-index: 3;
+    }
+    nav-items.nav-items {
+        display: none;
+        position: absolute;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100%;
+        background-image: linear-gradient(to top left, rgba(255, 0, 0, 0.5),rgba(0, 0, 255, 0.5));
+        color: white;
+        z-index: 2;
+        transition: 0.5s;
+    }
+    nav-items.nav-items ul {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        z-index: 2;
+    }
+    nav-items.nav-items li {
+        font-size: 25px;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    main {
+        grid-template-columns: auto auto;
+        padding: 35px;
+    }
+    pro-about {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+        padding: 30px 120px;
+    }
+    pro-about .container-1 {
+        height: 300px;
+    }
+    pro-about .container-2 {
+        height: 300px;
+    }
+    pro-about .container-3 {
+        height: 200px;
+        grid-column: 1/3;
+    }
+    pro-contact {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    pro-contact .container-2 {
+        height: 200px;
+    }
+    /* Gallery Section */
+    pro-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7, auto);
+    }
+    pro-gallery .container-1 {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+    pro-gallery .container-2 {
+        height: 500px;
+        grid-column: 2/3;
+        grid-row: 1/6;
+    }
+    pro-gallery .container-3 {
+        grid-column: 1/2;
+        grid-row: 6/8;
+    }
+    pro-gallery .container-4 {
+        grid-column: 1/2;
+        grid-row: 3/6;
+    }
+    pro-gallery .container-5 {
+        height: 200px;
+        grid-column: 2/3;
+        grid-row: 6/8;
+    }
+    #call-now {
+        display: block;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 30vw;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-image: linear-gradient(to top left, rgb(21, 255, 0), rgb(2, 126, 2));
+        color: white;
+        font-size: 22px;
+        border-radius: 50vw;
+        transition: 0.5s linear;
+    }
+}
+@media only screen and (max-width:426px) {
+    nav-items.nav-icon {
+        margin-right: 15px;
+    }
+    nav-items.nav-items {
+        height: 60%;
+        width: 80%;
+    }
+    nav-items.nav-items li {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    nav-items.nav-exit-icon {
+        top: 0;
+        right: 0;
+        margin: 20px 30px;
+        font-size: 30px;
+    }
+    nav-logo {
+        padding-left: 15px;
+        font-size: 25px;
+    }
+
+    main {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr auto;
+        padding: 35px;
+    }
+    main .container-1, main .container-2 {
+        margin: 0;
+    }
+    pro-about {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 20px;
+        padding: 30px 50px;
+    }
+    pro-about .person {
+        height: 250px;
+        grid-column: 1/2;
+    }
+
+    /* Gallery Section */
+    pro-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 200px);
+    }
+    pro-gallery .image {
+        height: 200px;
+        width: auto;
+        grid-column: 1/2;
+    }
+    pro-gallery .container-1 {
+        grid-row: 1/2;
+    }
+    pro-gallery .container-2 {
+        grid-row: 2/3;
+    }
+    pro-gallery .container-3 {
+        grid-row: 3/4;
+    }
+    pro-gallery .container-4 {
+        grid-row: 4/5;
+    }
+    pro-gallery .container-5 {
+        grid-row: 5/6;
+    }
+    #call-now {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-image: linear-gradient(to top left, rgb(21, 255, 0), rgb(2, 126, 2));
+        color: white;
+        font-size: 22px;
+        border-radius: 20px 20px 0 0;
+        transition: 0.5s linear;
+    }
+}

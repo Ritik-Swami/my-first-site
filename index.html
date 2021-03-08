@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main-layout>
+        <header>
+            <nav>
+                <nav-logo>Logo</nav-logo>
+                <nav-items id="nav-more-tools" class="nav-items">
+                    <ul>
+                        <li class="nav-links" onclick="document.location='#home'">Home</li>
+                        <li class="nav-links" onclick="document.location='#about'">About</li>
+                        <li class="nav-links" onclick="document.location='#contact'">Contact</li>
+                        <li class="nav-links" onclick="document.location='#gallery'">Gallery</li>
+                    </ul>
+                    <nav-items class="nav-icon nav-exit-icon" onclick="nav_exit_tools()"><i class="fa fa-times"></i></nav-items>
+                </nav-items>
+                <nav-items class="nav-icon nav-more-tools-icon" onclick="nav_more_tools()"><i class="fa fa-align-right"></i></nav-items>
+            </nav>
+            <div class="header-cont-1">Short website desc</div>
+            <div class="header-cont-2">Sign in</div>
+        </header>
+        <main id="home">
+            <div class="container-1">Image-cont</div>
+            <div class="container-2">Container</div>
+        </main>
+        <pro-about id="about">
+            <div class="person container-1">Person 1</div>
+            <div class="person container-2">Person 2</div>
+            <div class="person container-3">Person 3</div>
+        </pro-about>
+        <pro-gallery id="gallery">
+            <div class="image container-1">Image 1</div>
+            <div class="image container-2">Image 2</div>
+            <div class="image container-3">Image 3</div>
+            <div class="image container-4">Image 4</div>
+            <div class="image container-5">Image 5</div>
+        </pro-gallery>
+        <pro-contact id="contact">
+            <div class="container-1">Contact form</div>
+            <div class="container-2">Social Media</div>
+        </pro-contact>
+        <div id="call-now" onclick="document.location='tel:+919591310085'">Call Now</div>
+        <footer>Footer</footer>
+    </main-layout>
+    <script type="text/javascript" src="costumelements.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</body>
+</html>
