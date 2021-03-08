@@ -6,6 +6,7 @@ function nav_exit_tools() {
 }
 window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
+    opacity = 0;
     if (currentScroll <= 100) {
       opacity = 0;
     } else {
