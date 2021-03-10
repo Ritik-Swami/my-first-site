@@ -24,7 +24,7 @@ window.addEventListener("scroll", () => {
 //   .then(json => demo.innerHTML = json[0].name);
   
 // Replace ./data.json with your JSON feed
-fetch('https://github.com/Ritik-Swami-Jr/my-first-site/blob/main/data.JSON').then(response => {
+fetch('./data.JSON').then(response => {
   return response.json();
 }).then(data => {
   // Work with JSON data here
